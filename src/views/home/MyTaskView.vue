@@ -76,11 +76,32 @@
       class="w-full h-fit min-h-[430px] bg-white rounded-md flex flex-col gap-3 p-3 lg:col-span-1 col-span-2"
     >
       <article
-        v-for="i in 2"
+        v-for="i in 5"
         :key="i"
-        class="h-32 w-full rounded-md border border-1 border-gray-300"
+        class="flex flex-row space-x-4 min-h-32 h-auto w-full p-4 rounded-md border border-1 border-gray-300"
       >
-        test
+        <input
+          type="checkbox"
+          checked="checked"
+          class="peer checkbox border-gray-600 bg-white checked:border-orange-600 checked:bg-orange-500 checked:text-white"
+        />
+        <section class="space-y-1 font-medium w-full peer-checked:line-through">
+          <h3 class="">Create new landing page</h3>
+          <div class="flex items-center gap-1">
+            <Icon icon="mdi:clock-outline" class="size-4 text-gray-400" />
+            <p class="text-sm text-gray-400">Apr 25, 2025</p>
+          </div>
+          <p class="text-sm text-gray-400">08:00 - 09:00</p>
+          <div class="badge bg-purple-200 text-purple-700 rounded-full border-none font-normal">
+            <Icon icon="mdi:circle" class="size-4" />
+            Primary
+          </div>
+        </section>
+        <div class="flex flex-row space-x-2">
+          <Icon icon="mdi:edit-outline" class="size-6" />
+          <Icon icon="mdi:edit-outline" class="size-6" />
+          <Icon icon="mdi:edit-outline" class="size-6" />
+        </div>
       </article>
     </div>
     <div class="w-full h-fit min-h-[430px] bg-white rounded-md hidden lg:flex"></div>

@@ -6,16 +6,19 @@
       </h1>
     </div>
     <hr class="border-[1px] border-[#c5a86e]" />
-    <figure class="flex flex-row gap-2 mt-3 items-center justify-start">
-      <img
-        src="../assets/luan.png"
-        alt=""
-        class="mask mask-square rounded-xl size-12 object-cover"
-      />
-      <section class="flex flex-col w-auto">
-        <p class="text-gray-500 brightness-50">Luân Vũ</p>
-        <p class="text-gray-500">vuliz943@gmail.com</p>
-      </section>
+    <figure class="flex flex-row gap-2 mt-3 items-center justify-between">
+      <div class="flex flex-row gap-2">
+        <img
+          src="../assets/luan.png"
+          alt=""
+          class="mask mask-square rounded-xl size-12 object-cover"
+        />
+        <section class="flex flex-col">
+          <p class="text-gray-500 brightness-50">Luân Vũ</p>
+          <p class="text-gray-500">vuliz943@gmail.com</p>
+        </section>
+      </div>
+
       <div class="size-6">
         <Icon icon="mdi:bell-outline" class="size-6" />
       </div>
