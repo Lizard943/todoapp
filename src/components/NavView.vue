@@ -1,7 +1,9 @@
 <template lang="">
-  <div class="w-[25%] bg-[#f5f6ef] px-5 font-monaSan font-medium">
+  <div class="w-[25%] h-screen bg-[#f5f6ef] px-5 font-monaSan font-medium sticky top-0 left-0">
     <div class="h-36 flex justify-center items-center" role="logo">
-      <h1 class="text-6xl font-bold text-gray-700 w-auto">DOIT.</h1>
+      <h1 class="text-6xl font-bold text-gray-700 w-auto">
+        DOIT<span class="text-[#92401d]">.</span>
+      </h1>
     </div>
     <hr class="border-[1px] border-[#c5a86e]" />
     <figure class="flex flex-row gap-2 mt-3 items-center justify-start">
@@ -10,11 +12,11 @@
         alt=""
         class="mask mask-square rounded-xl size-12 object-cover"
       />
-      <section class="flex flex-col">
+      <section class="flex flex-col w-auto">
         <p class="text-gray-500 brightness-50">Luân Vũ</p>
         <p class="text-gray-500">vuliz943@gmail.com</p>
       </section>
-      <div class="justify-end size-6 ml-auto">
+      <div class="size-6">
         <Icon icon="mdi:bell-outline" class="size-6" />
       </div>
     </figure>

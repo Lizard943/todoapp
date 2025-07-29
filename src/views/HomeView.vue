@@ -1,24 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import NavView from '@/components/NavView.vue'
+</script>
 
 <template>
-  <main>
-    <div class="card bg-base-100 w-96 shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">Card Title</h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are title and actions
-          parts
-        </p>
-        <div class="card-actions justify-end">
-          <button class="btn btn-primary">Buy Now</button>
-        </div>
-      </div>
+  <div class="flex flex-row bg-white text-black min-h-screen">
+    <NavView />
+    <div class="w-full bg-gradient-to-r from-[#f1eedb] to-[#e1eaf5] pb-5">
+      <RouterView />
     </div>
-  </main>
+  </div>
 </template>
+
+<style lang=""></style>
