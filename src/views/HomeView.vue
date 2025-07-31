@@ -3,12 +3,12 @@ import NavView from '@/components/NavView.vue'
 </script>
 
 <template>
-  <div class="flex flex-row bg-white text-black min-h-screen">
+  <div class="flex flex-row bg-gradient-to-r from-[#f1eedb] to-[#e1eaf5] text-black min-h-screen">
     <NavView />
-    <div class="w-full bg-gradient-to-r from-[#f1eedb] to-[#e1eaf5] pb-5">
+    <div class="w-full pb-5">
       <RouterView />
     </div>
   </div>
 </template>
 
-<style lang=""></style>
+<style lang="css"></style>
