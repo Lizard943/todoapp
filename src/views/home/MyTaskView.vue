@@ -69,14 +69,12 @@ const tasks2 = [
   {
     id: '1',
     title: 'Create new landing page',
-    date: 'Apr 25, 2025',
     time: '08:00 - 09:00',
     checked: false,
   },
   {
     id: '2',
     title: 'Design homepage banner',
-    date: 'Jul 30, 2025',
     time: '10:00 - 11:30',
     checked: true,
   },

@@ -1,4 +1,6 @@
+import DailyTaskView from '@/views/home/DailyTaskView.vue'
 import MyTaskView from '@/views/home/MyTaskView.vue'
+import ProjectsView from '@/views/home/ProjectsView.vue'
 import HomeView from '@/views/HomeView.vue'
 import LandingView from '@/views/LandingView.vue'
 import LoginView from '@/views/LoginView.vue'
@@ -21,9 +23,19 @@ const router = createRouter({
       component: HomeView,
       children: [
         {
-          path: 'mytask',
-          name: 'mytask',
+          path: '',
+          name: '',
           component: MyTaskView,
+        },
+        {
+          path: 'daily',
+          name: 'Daily',
+          component: DailyTaskView,
+        },
+        {
+          path: 'project',
+          name: 'Project',
+          component: ProjectsView,
         },
       ],
     },

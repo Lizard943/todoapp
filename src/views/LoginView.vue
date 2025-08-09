@@ -91,7 +91,7 @@ const register = () => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
     .then(() => {
       console.log('Đăng nhập thành công')
-      router.push('/home/mytask')
+      router.push('/home')
     })
     .catch((error) => {
       console.log(error.code)

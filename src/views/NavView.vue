@@ -26,20 +26,7 @@
       </div>
     </figure>
 
-    <div class="my-4 text-gray-600" role="menu">
-      <ul class="w-full p-2 space-y-1">
-        <li
-          v-for="i in 5"
-          :key="i"
-          class="h-10 p-4 bg-inherit hover:brightness-90 hover:rounded-lg hover:cursor-pointer flex items-center"
-        >
-          <figure class="flex flex-row gap-5">
-            <Icon icon="mdi:user-outline" class="size-6" />
-            <p class="">Inbox</p>
-          </figure>
-        </li>
-      </ul>
-    </div>
+    <MainMenu />
 
     <hr class="border-[1px] border-[#c5a86e]" />
 
@@ -58,9 +45,7 @@
         </li>
 
         <li
-          v-for="i in 2"
           @click="handleSignOut"
-          :key="i"
           class="h-10 p-4 bg-inherit hover:brightness-90 hover:rounded-lg hover:cursor-pointer flex items-center"
         >
           <figure class="flex flex-row gap-5">
@@ -74,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+import MainMenu from '@/components/sidenav/MainMenu.vue'
 import { onMounted, ref } from 'vue'
 import { getAuth, onAuthStateChanged, signOut, type Auth } from 'firebase/auth'
 import { useRouter } from 'vue-router'
@@ -93,7 +79,7 @@ onMounted(() => {
 
 const handleSignOut = () => {
   signOut(auth).then(() => {
-    router.push('/login')
+    router.push('/')
   })
 }
 </script>

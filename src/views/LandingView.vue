@@ -1,8 +1,8 @@
 <template>
-  <div class="overflow-hidden bg-white py-4 sm:py-6">
+  <div class="overflow-hidden bg-white py-4 sm:py-6 lg:h-screen">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div
-        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center"
       >
         <div class="lg:pt-4 lg:pr-8">
           <div class="lg:max-w-lg">
@@ -16,6 +16,16 @@
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
               suscipit eaque, iste dolor cupiditate blanditiis ratione.
             </p>
+            <button
+              @click="
+                () => {
+                  router.push('/login')
+                }
+              "
+              class="mt-6 px-5 py-2 bg-indigo-600 text-white rounded-lg"
+            >
+              Try Todoapp
+            </button>
             <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
               <div v-for="feature in features" :key="feature.name" class="relative pl-9">
                 <dt class="inline font-semibold text-gray-900">
@@ -36,7 +46,7 @@
         <img
           src="https://tailwindcss.com/plus-assets/img/component-images/project-app-screenshot.png"
           alt="Product screenshot"
-          class="h-screen w-auto max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-228 md:-ml-4 lg:-ml-0"
+          class="py-5 sm:h-screen sm:w-auto h-auto w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 md:-ml-4 lg:-ml-0"
         />
       </div>
     </div>
@@ -45,6 +55,8 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const features = [
   {
@@ -57,12 +69,6 @@ const features = [
     name: 'SSL certificates.',
     description:
       'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: 'mdi:rocket',
-  },
-  {
-    name: 'Database backups.',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: 'mdi:rocket',
   },
 ]

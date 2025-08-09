@@ -1,6 +1,6 @@
 <template lang="">
   <article
-    class="flex flex-row space-x-4 min-h-32 h-auto w-full p-4 rounded-md border border-1 border-gray-300"
+    class="flex flex-row space-x-4 h-auto w-full p-4 rounded-md border border-1 border-gray-300"
   >
     <input
       type="checkbox"
@@ -9,7 +9,7 @@
     />
     <section class="space-y-1 font-medium w-full peer-checked:line-through">
       <h3 class="">{{ task.title }}</h3>
-      <div class="flex items-center gap-1">
+      <div v-if="task.date" class="flex items-center gap-1">
         <Icon icon="mdi:clock-outline" class="size-4 text-gray-400" />
         <p class="text-sm text-gray-400">{{ task.date }}</p>
       </div>
