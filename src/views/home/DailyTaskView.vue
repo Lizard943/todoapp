@@ -5,7 +5,7 @@
       <h2 class="text-2xl font-semibold">Daily Tasks</h2>
       <div class="flex flex-row justify-between items-center">
         <p class="text-gray-500">Manage your daily tasks efficiently</p>
-        <DailyTaskCreateItem @updated="fetchData" />
+        <DailyTaskCreateItem />
       </div>
     </div>
     <DailyTaskTable :tasks="tasks" />
@@ -13,17 +13,18 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUpdate } from 'vue'
+import { ref, onMounted, onUpdated } from 'vue'
 import axios from 'axios'
 import SearchBar from '@/components/mytask/SearchBar.vue'
 import DailyTaskTable from '@/components/dailytask/DailyTaskTable.vue'
 import DailyTaskCreateItem from '@/components/dailytask/DailyTaskCreateItem.vue'
+
 const tasks = ref(null)
 const error = ref('')
 onMounted(() => {
   fetchData()
 })
-onBeforeUpdate(() => {
+onUpdated(() => {
   fetchData()
 })
 const fetchData = async () => {
