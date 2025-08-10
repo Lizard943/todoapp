@@ -51,7 +51,7 @@
 import { reactive } from 'vue'
 import axios from 'axios'
 import type { TaskItem } from '@/types/dailytaskitem.type'
-import { defineEmits } from 'vue'
+
 const task = reactive<TaskItem>({
   id: '23',
   groupId: 'group-1',
@@ -60,13 +60,11 @@ const task = reactive<TaskItem>({
   title: '',
   statusByDate: {},
 })
-const emit = defineEmits(['updated'])
+
 async function handleSubmit() {
   try {
-    console.log(task)
     const res = await axios.post('http://localhost:3000/api/daily-task/create', task)
     console.log('Server response:', res.data)
-    emit('updated')
   } catch {
     console.log('lỗi')
   }

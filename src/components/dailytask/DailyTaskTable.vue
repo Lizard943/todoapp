@@ -20,6 +20,7 @@
         </tr>
       </thead>
       <tbody>
+        <DailyTaskSection />
         <DailyTaskTableItem
           v-for="(task, index) in tasks"
           :key="index"
@@ -48,7 +49,7 @@ const modalRef = ref()
 const selectedItem = ref(null)
 
 function openModal(item) {
-  selectedItem.value = { ...item } // clone tránh thay đổi gốc trực tiếp
+  selectedItem.value = { ...item }
   modalRef.value?.open()
 }
 </script>

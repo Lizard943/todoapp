@@ -52,7 +52,7 @@ const sendStatusUpdate = debounce(
   async (status: boolean) => {
     isUpdating.value = true
     try {
-      await axios.patch(`http://localhost:3000/api/daily-task/update-status/${props.task.id}`, {
+      await axios.patch(`http://localhost:3000/api/daily-task/update-status/${props.task._id}`, {
         date: today,
         status,
       })
