@@ -1,7 +1,7 @@
 <!-- MyModal.vue -->
 <template>
   <dialog id="myDialog" ref="dialogRef" class="modal">
-    <div class="modal-box w-[800px] max-w-none h-[600px]">
+    <div class="modal-box md:w-2/3 md:max-w-[800px] h-[600px] w-full max-w-none overflow-scroll">
       <div class="flex flex-row justify-between items-center">
         <h3 class="font-bold text-lg">{{ selectedItem?.title }}</h3>
         <div class="flex flex-row justify-center gap-3">
@@ -24,15 +24,39 @@
           </form>
         </div>
       </div>
-      <p class="py-4">Đây là nội dung modal</p>
-      <p>{{ selectedItem?._id }}</p>
+      <div class="mt-5">
+        <StreakInfo :statusList="selectedItem?.statusByDate" />
+        <input
+          type="text"
+          class="mt-5 px-3 py-2 border border-gray-500 rounded-md text-gray-600 w-full"
+          :value="selectedItem?.title"
+        />
+        <div class="grid grid-cols-2 gap-2 mt-2">
+          <input
+            type="text"
+            class="px-3 py-2 border border-gray-500 rounded-md text-gray-600 w-full"
+            :value="selectedItem?.tag"
+          />
+          <input
+            type="time"
+            class="px-3 py-2 border border-gray-500 rounded-md text-gray-600 w-full"
+            :value="selectedItem?.time"
+          />
+        </div>
+      </div>
     </div>
   </dialog>
 </template>
 
 <script setup lang="ts">
+import StreakInfo from './modal/StreakInfo.vue'
 import { ref } from 'vue'
+
 import axios from 'axios'
+
+const prop = defineProps({
+  selectedItem: Object,
+})
 
 const dialogRef = ref()
 
@@ -53,9 +77,6 @@ async function handleDelete() {
   }
 }
 
-const prop = defineProps({
-  selectedItem: Object,
-})
 defineExpose({
   open, // Expose cho component cha gọi được
 })

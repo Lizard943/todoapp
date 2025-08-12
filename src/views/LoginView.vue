@@ -39,6 +39,7 @@
           <div class="mt-2">
             <input
               v-model="password"
+              @keyup.enter="register"
               type="password"
               name="password"
               id="password"
